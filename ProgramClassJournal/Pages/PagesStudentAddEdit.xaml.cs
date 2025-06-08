@@ -1,7 +1,6 @@
 ﻿using ProgramClassJournal.Classes;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,56 +13,50 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Xml.Linq;
 
 namespace ProgramClassJournal.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для PagesClassesAddEdit.xaml
+    /// Логика взаимодействия для PagesStudentAddEdit.xaml
     /// </summary>
-    public partial class PagesClassesAddEdit : Page
+    public partial class PagesStudentAddEdit : Page
     {
-        public PagesClassesAddEdit()
+        public PagesStudentAddEdit()
         {
             InitializeComponent();
-            
-            currentClass = new ClassPage(0, "", "", "");
-            
+
+            currentStudent = new Students(0, "", "", "");
+
             DataContext = this;
         }
-        public Classes.ClassPage currentClass { get; set; }
+        public Classes.Students currentStudent { get; set; }
         bool editOrAdd = false;
-        public PagesClassesAddEdit(Classes.ClassPage pc)
+        public PagesStudentAddEdit(Classes.Students st)
         {
             InitializeComponent();
             DataContext = this;
             editOrAdd = true;
-            currentClass = pc;
-            
-
+            currentStudent = st;
 
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            
             if (!editOrAdd)
             {
-                
-                if (App.allClasses.Count == 0)
-                    currentClass.Id = 1;
-                else
-                    currentClass.Id = App.allClasses.OrderByDescending(c => c.Id).First().Id + 1;
-                App.allClasses.Add(currentClass);
-            }
-            NavigationService.Navigate(new PagesClasses());
 
+                if (App.allStudents.Count == 0)
+                    currentStudent.Id = 1;
+                else
+                    currentStudent.Id = App.allStudents.OrderByDescending(c => c.Id).First().Id + 1;
+                App.allStudents.Add(currentStudent);
+            }
+            NavigationService.Navigate(new PagesStudents());
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new PagesClasses());
+            NavigationService.Navigate(new PagesStudents());
         }
-
     }
 }

@@ -23,6 +23,32 @@ namespace ProgramClassJournal.Pages
         public PagesPredmety()
         {
             InitializeComponent();
+            dataPredmety.ItemsSource = App.allPredmety;
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Pages.PagePredmetyAddEdit page = new Pages.PagePredmetyAddEdit();
+            NavigationService.Navigate(page);
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            Classes.Predmety predmety = dataPredmety.SelectedItem as Classes.Predmety;
+            if (predmety != null)
+            {
+                Pages.PagePredmetyAddEdit page = new Pages.PagePredmetyAddEdit(predmety);
+                NavigationService.Navigate(page);
+            }
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Classes.Predmety pt = dataPredmety.SelectedItem as Classes.Predmety;
+            if (pt != null)
+                App.allPredmety.Remove(pt);
+            dataPredmety.ItemsSource = null;
+            dataPredmety.ItemsSource = App.allClasses;
         }
     }
 }

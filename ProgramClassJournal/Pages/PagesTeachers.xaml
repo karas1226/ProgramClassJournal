@@ -10,19 +10,19 @@
 
     <Grid>
         <Grid>
-            <DataGrid x:Name="dataGridCars" AutoGenerateColumns="False" Margin="0,0,0,55">
+            <DataGrid x:Name="dataTeachers" AutoGenerateColumns="False" Margin="0,0,0,55">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="id" Binding="{Binding Id}" />
                     <DataGridTextColumn Header="ФИО" Binding="{Binding FioTeacher}" />
-                    <DataGridTextColumn Header="Предметы" Binding="{Binding EntryTime, StringFormat=dd.MM.yyyy HH:mm}" />
-                    <DataGridTextColumn Header="Классы" Binding="{Binding ExitTime, StringFormat=dd.MM.yyyy HH:mm}" />
-                    <DataGridTextColumn Header="Классное руководство" Binding="{Binding TeacherClass}" />
+                    <DataGridTextColumn Header="Предметы" Binding="{Binding NamePredmety}" />
+                    <DataGridTextColumn Header="Классы" Binding="{Binding NameClass}" />
+                    <DataGridTextColumn Header="Классное руководство" Binding="{Binding ClassTeacher}" />
                     
                 </DataGrid.Columns>
             </DataGrid>
-            <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="btnEdit" Content="Редактировать" HorizontalAlignment="Left" Margin="95,420,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="btnDelete" Content="Удалить" HorizontalAlignment="Left" Margin="217,420,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top" Click="btnAdd_Click"/>
+            <Button x:Name="btnEdit" Content="Редактировать" HorizontalAlignment="Left" Margin="95,420,0,0" VerticalAlignment="Top" Click="btnEdit_Click"/>
+            <Button x:Name="btnDelete" Content="Удалить" HorizontalAlignment="Left" Margin="217,420,0,0" VerticalAlignment="Top" Click="btnDelete_Click"/>
         </Grid>
     </Grid>
 </Page>

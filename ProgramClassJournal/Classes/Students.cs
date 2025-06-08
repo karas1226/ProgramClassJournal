@@ -14,11 +14,11 @@ namespace ProgramClassJournal.Classes
         private string parallell;
         private string numberClass;
 
-        public Students(int id, string fioStudent, DateTime dateOfBirth, string parallell, string numberClass)
+        public Students(int id, string fioStudent, string parallell, string numberClass)
         {
             this.id = id;
             this.fioStudent = fioStudent;
-            this.dateOfBirth = dateOfBirth;
+            this.dateOfBirth = DateTime.Now;
             this.parallell = parallell;
             this.numberClass = numberClass;
         }
@@ -29,14 +29,6 @@ namespace ProgramClassJournal.Classes
         public string Parallell { get => parallell; set => parallell = value; }
         public string NumberClass { get => numberClass; set => numberClass = value; }
 
-        public override bool Equals(object? obj)
-        {
-            return obj is Students students &&
-                   id == students.id &&
-                   fioStudent == students.fioStudent &&
-                   dateOfBirth == students.dateOfBirth &&
-                   parallell == students.parallell &&
-                   numberClass == students.numberClass;
-        }
+        
     }
 }

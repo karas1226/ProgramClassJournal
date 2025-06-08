@@ -10,18 +10,18 @@
 
     <Grid>
         <Grid>
-            <DataGrid x:Name="dataGridCars" AutoGenerateColumns="False" Margin="0,0,0,55">
+            <DataGrid x:Name="dataPredmety" AutoGenerateColumns="False" Margin="0,0,0,55">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="id" Binding="{Binding Id}" />
-                    <DataGridTextColumn Header="Название предмета" Binding="{Binding Number}" />
-                    <DataGridTextColumn Header="ФИО преподавателя" Binding="{Binding EntryTime, StringFormat=dd.MM.yyyy HH:mm}" />
-                    <DataGridTextColumn Header="Дата проведения" Binding="{Binding ExitTime, StringFormat=dd.MM.yyyy HH:mm}" />
-                    
+                    <DataGridTextColumn Header="Название предмета" Binding="{Binding NamePredmet}" />
+                    <DataGridTextColumn Header="ФИО преподавателя" Binding="{Binding FioTeacher}" />
+                    <DataGridTextColumn Header="Дата проведения" Binding="{Binding DatePredmet, StringFormat=dd.MM.yyyy HH:mm}" />
+
                 </DataGrid.Columns>
             </DataGrid>
-            <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="btnEdit" Content="Редактировать" HorizontalAlignment="Left" Margin="95,420,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="btnDelete" Content="Удалить" HorizontalAlignment="Left" Margin="217,420,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="10,410,0,10" Click="btnAdd_Click"/>
+            <Button x:Name="btnEdit" Content="Редактировать" HorizontalAlignment="Left" Margin="95,410,0,0" VerticalAlignment="Top" Click="btnEdit_Click" Height="30"/>
+            <Button x:Name="btnDelete" Content="Удалить" HorizontalAlignment="Left" Margin="217,410,0,0" VerticalAlignment="Top" Height="30" Click="btnDelete_Click"/>
         </Grid>
     </Grid>
 </Page>

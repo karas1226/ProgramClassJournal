@@ -29,15 +29,7 @@ namespace ProgramClassJournal.Classes
         public string NameClass { get => nameClass; set => nameClass = value; }
         public bool ClassTeacher { get => classTeacher; set => classTeacher = value; }
 
-        public override bool Equals(object? obj)
-        {
-            return obj is Teacher teacher &&
-                   id == teacher.id &&
-                   fioTeacher == teacher.fioTeacher &&
-                   namePredmety == teacher.namePredmety &&
-                   nameClass == teacher.nameClass &&
-                   classTeacher == teacher.classTeacher;
-        }
+    
     }
 
 }

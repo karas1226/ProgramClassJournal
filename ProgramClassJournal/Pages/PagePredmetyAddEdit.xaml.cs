@@ -1,7 +1,6 @@
 ﻿using ProgramClassJournal.Classes;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,56 +13,53 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Xml.Linq;
 
 namespace ProgramClassJournal.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для PagesClassesAddEdit.xaml
+    /// Логика взаимодействия для PagePredmetyAddEdit.xaml
     /// </summary>
-    public partial class PagesClassesAddEdit : Page
+    public partial class PagePredmetyAddEdit : Page
     {
-        public PagesClassesAddEdit()
+        public PagePredmetyAddEdit()
         {
             InitializeComponent();
-            
-            currentClass = new ClassPage(0, "", "", "");
-            
+            currentPredmet = new Predmety(0, "", "");
             DataContext = this;
+            
+            cmbTeacherName.ItemsSource = teacherName;
+
+
         }
-        public Classes.ClassPage currentClass { get; set; }
+        public Classes.Predmety currentPredmet { get; set; }
         bool editOrAdd = false;
-        public PagesClassesAddEdit(Classes.ClassPage pc)
+        List<string> teacherName = App.allTeachers.Select(t => t.FioTeacher).ToList();
+        public PagePredmetyAddEdit(Classes.Predmety pt)
         {
             InitializeComponent();
             DataContext = this;
             editOrAdd = true;
-            currentClass = pc;
-            
-
-
+            currentPredmet = pt;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            
             if (!editOrAdd)
             {
-                
-                if (App.allClasses.Count == 0)
-                    currentClass.Id = 1;
-                else
-                    currentClass.Id = App.allClasses.OrderByDescending(c => c.Id).First().Id + 1;
-                App.allClasses.Add(currentClass);
-            }
-            NavigationService.Navigate(new PagesClasses());
 
+                if (App.allPredmety.Count == 0)
+                    currentPredmet.Id = 1;
+                else
+                    currentPredmet.Id = App.allPredmety.OrderByDescending(c => c.Id).First().Id + 1;
+                App.allPredmety.Add(currentPredmet);
+            }
+            NavigationService.Navigate(new PagesPredmety());
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new PagesClasses());
+            NavigationService.Navigate(new PagesPredmety());
         }
+    } 
 
-    }
 }

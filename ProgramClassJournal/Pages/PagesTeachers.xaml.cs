@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgramClassJournal.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,33 @@ namespace ProgramClassJournal.Pages
         public PagesTeachers()
         {
             InitializeComponent();
+            dataTeachers.ItemsSource = App.allTeachers;
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Pages.PageTeachersAddEdit page = new Pages.PageTeachersAddEdit();
+            NavigationService.Navigate(page);
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            Classes.Teacher classPage = dataTeachers.SelectedItem as Classes.Teacher;
+            if (classPage != null)
+            {
+                Pages.PageTeachersAddEdit page = new Pages.PageTeachersAddEdit(classPage);
+                NavigationService.Navigate(page);
+            }
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Classes.Teacher teacher = dataTeachers.SelectedItem as Classes.Teacher;
+            if (teacher != null)
+            {
+                Pages.PageTeachersAddEdit page = new Pages.PageTeachersAddEdit(teacher);
+                NavigationService.Navigate(page);
+            }
         }
     }
 }

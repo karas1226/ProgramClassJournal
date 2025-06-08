@@ -12,11 +12,11 @@
         <StackPanel Orientation="Vertical">
             <TextBlock Text="Классы" FontSize="30" HorizontalAlignment="Center"/>
             <Label Content="Класс"/>
-            <TextBox x:Name="tbNumber"/>
+            <TextBox x:Name="tbNumber" Text="{Binding currentClass.ClassName}"/>
             <Label Content="Параллель"/>
-            <TextBox x:Name="tbParallel"/>
+            <TextBox x:Name="tbParallel" Text="{Binding currentClass.Parallel}"/>
             <Label Content="Классный руководитель"/>
-            <TextBox x:Name="tbTeacher"/>
+            <TextBox x:Name="tbTeacher" Text="{Binding currentClass.ClassName}"/>
   
             <Button x:Name="btnSave" Content="Сохранить" Click="btnSave_Click"/>
             <Button x:Name="btnBack" Content="Назад" Click="btnBack_Click"/>

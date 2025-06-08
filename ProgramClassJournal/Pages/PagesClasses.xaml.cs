@@ -43,5 +43,25 @@ namespace ProgramClassJournal.Pages
                 NavigationService.Navigate(page);
             }
         }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Classes.ClassPage pc = dataClasses.SelectedItem as Classes.ClassPage;
+            if (pc != null)
+                App.allClasses.Remove(pc);
+            dataClasses.ItemsSource = null;
+            dataClasses.ItemsSource = App.allClasses;
+        }
+
+        private void btnImport_Click(object sender, RoutedEventArgs e)
+        {
+            ClassPage.Load();
+            dataClasses.ItemsSource = App.allClasses;
+        }
+
+        private void btnExport_Click(object sender, RoutedEventArgs e)
+        {
+            ClassPage.Save();
+        }
     }
 }

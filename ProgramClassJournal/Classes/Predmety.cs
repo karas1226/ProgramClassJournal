@@ -13,12 +13,12 @@ namespace ProgramClassJournal.Classes
         private string fioTeacher;
         private DateTime datePredmet;
 
-        public Predmety(int id, string namePredmet, string fioTeacher, DateTime datePredmet)
+        public Predmety(int id, string namePredmet, string fioTeacher)
         {
             this.id = id;
             this.namePredmet = namePredmet;
             this.fioTeacher = fioTeacher;
-            this.datePredmet = datePredmet;
+            this.datePredmet = DateTime.Now;
         }
 
         public int Id { get => id; set => id = value; }
@@ -26,13 +26,6 @@ namespace ProgramClassJournal.Classes
         public string FioTeacher { get => fioTeacher; set => fioTeacher = value; }
         public DateTime DatePredmet { get => datePredmet; set => datePredmet = value; }
 
-        public override bool Equals(object? obj)
-        {
-            return obj is Predmety predmety &&
-                   id == predmety.id &&
-                   namePredmet == predmety.namePredmet &&
-                   fioTeacher == predmety.fioTeacher &&
-                   datePredmet == predmety.datePredmet;
-        }
+       
     }
 }

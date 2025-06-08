@@ -13,9 +13,18 @@
             <RowDefinition Height="196*"/>
             <RowDefinition Height="29*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="dataClasses"/>
-        <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" Click="btnAdd_Click" Height="20" Width="57" Grid.Row="1"/>
+        <DataGrid x:Name="dataClasses" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Класс" Binding="{Binding ClassName}" />
+                <DataGridTextColumn Header="Параллель" Binding="{Binding Parallel }" />
+                <DataGridTextColumn Header="Классный руководитель" Binding="{Binding ClassTeacher}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="10,22,0,10" Click="btnAdd_Click" Width="57" Grid.Row="1"/>
         <Button x:Name="btnEdit" Content="Редактировать" HorizontalAlignment="Left" Margin="95,22,0,10" Click="btnEdit_Click" Width="105" Grid.Row="1"/>
-        <Button x:Name="btnDelete" Content="Удалить" HorizontalAlignment="Left" Margin="249,23,0,0" VerticalAlignment="Top" Height="20" Width="48" Grid.Row="1"/>
+        <Button x:Name="btnDelete" Content="Удалить" HorizontalAlignment="Left" Margin="239,22,0,0" VerticalAlignment="Top" Height="26" Width="48" Grid.Row="1" Click="btnDelete_Click"/>
+        <Button x:Name="btnImport" Content="Импортировать" HorizontalAlignment="Left" Height="26" Margin="598,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="96" Click="btnImport_Click"/>
+        <Button x:Name="btnExport" Content="Экспортировать" HorizontalAlignment="Left" Margin="703,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="26" Width="94" Click="btnExport_Click"/>
     </Grid>
 </Page>

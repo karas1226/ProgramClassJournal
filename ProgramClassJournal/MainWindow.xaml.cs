@@ -26,5 +26,29 @@ namespace ProgramClassJournal
             Pages.PagesClasses page = new Pages.PagesClasses();
             mainFrame.Navigate(page);
         }
+
+        private void btnOcenky_Click(object sender, RoutedEventArgs e)
+        {
+            Pages.PagesOcenky page = new Pages.PagesOcenky();
+            mainFrame.Navigate(page);
+        }
+
+        private void btnPredmety_Click(object sender, RoutedEventArgs e)
+        {
+            Pages.PagesPredmety page = new Pages.PagesPredmety();
+            mainFrame.Navigate(page);
+        }
+
+        private void btnTeacher_Click(object sender, RoutedEventArgs e)
+        {
+            Pages.PagesTeachers page = new Pages.PagesTeachers();
+            mainFrame.Navigate(page);
+        }
+
+        private void btnStudents_Click(object sender, RoutedEventArgs e)
+        {
+            Pages.PagesStudents page = new Pages.PagesStudents();
+            mainFrame.Navigate(page);
+        }
     }
 }
