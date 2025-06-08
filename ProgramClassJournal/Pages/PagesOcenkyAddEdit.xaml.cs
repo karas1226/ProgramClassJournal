@@ -46,9 +46,39 @@ namespace ProgramClassJournal.Pages
         }
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(currentOcenky.StudentName))
+            {
+                MessageBox.Show("Введите ФИО ученика");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(currentOcenky.TeacherName))
+            {
+                MessageBox.Show("Введите ФИО учителя");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(currentOcenky.PredmetName))
+            {
+                MessageBox.Show("Введите предмет");
+                return;
+            } 
+            if (currentOcenky.Ocenka == 0)
+            {
+                MessageBox.Show("Введите оценку");
+                return;
+            }
+            if ((currentOcenky.Ocenka >= 6))
+            {
+                MessageBox.Show("Введите оценку от 1 до 5");
+                return;
+            }
             if (!editOrAdd)
             {
-
+                if (!App.allTeachers.Any(p => p.FioTeacher == currentOcenky.TeacherName))
+                {
+                    MessageBox.Show("Такого учителя не существует");
+                    return;
+                }
+                
                 if (App.allOcenky.Count == 0)
                     currentOcenky.Id = 1;
                 else

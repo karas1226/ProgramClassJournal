@@ -44,16 +44,35 @@ namespace ProgramClassJournal.Pages
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(currentPredmet.NamePredmet))
+            {
+                MessageBox.Show("Введите название предмета");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(currentPredmet.FioTeacher))
+            {
+                MessageBox.Show("Выберите преподавателя");
+                return;
+            }
             if (!editOrAdd)
             {
 
+                if (App.allPredmety.Any(p => p.NamePredmet == currentPredmet.NamePredmet))
+                {
+                    MessageBox.Show("Предмет с таким названием уже существует");
+                    return;
+                }
                 if (App.allPredmety.Count == 0)
                     currentPredmet.Id = 1;
                 else
                     currentPredmet.Id = App.allPredmety.OrderByDescending(c => c.Id).First().Id + 1;
                 App.allPredmety.Add(currentPredmet);
+                NavigationService.Navigate(new PagesPredmety());
+             
+                
             }
-            NavigationService.Navigate(new PagesPredmety());
+           
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

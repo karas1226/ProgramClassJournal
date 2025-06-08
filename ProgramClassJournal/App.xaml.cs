@@ -17,6 +17,7 @@ namespace ProgramClassJournal
         public static ObservableCollection<Predmety> allPredmety = new ObservableCollection<Predmety>();
         public static ObservableCollection<Students> allStudents = new ObservableCollection<Students>();
         public static ObservableCollection<Teacher> allTeachers = new ObservableCollection<Teacher>();
+        
     }
 
 }

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace ProgramClassJournal.Classes
@@ -25,7 +28,23 @@ namespace ProgramClassJournal.Classes
         public string NamePredmet { get => namePredmet; set => namePredmet = value; }
         public string FioTeacher { get => fioTeacher; set => fioTeacher = value; }
         public DateTime DatePredmet { get => datePredmet; set => datePredmet = value; }
+        public static void Save()
+        {
+            string fileName = "predmets.json";
+            string json = JsonSerializer.Serialize(App.allPredmety, new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+            });
+            File.WriteAllText(fileName, json, Encoding.UTF8);
+        }
+        public static void Load()
+        {
+            string fileName = "predmets.json";
+            string data = File.ReadAllText(fileName);
+            App.allPredmety = JsonSerializer.Deserialize<ObservableCollection<Predmety>>(data);
 
-       
+        }
+
     }
 }

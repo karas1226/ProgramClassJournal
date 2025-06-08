@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ProgramClassJournal.Classes;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,7 +50,29 @@ namespace ProgramClassJournal.Pages
             if (pt != null)
                 App.allPredmety.Remove(pt);
             dataPredmety.ItemsSource = null;
-            dataPredmety.ItemsSource = App.allClasses;
+            dataPredmety.ItemsSource = App.allPredmety;
+        }
+
+        private void btnImport_Click(object sender, RoutedEventArgs e)
+        {
+            Predmety.Load();
+            dataPredmety.ItemsSource = App.allPredmety;
+        }
+
+        private void btnExport_Click(object sender, RoutedEventArgs e)
+        {
+            Predmety.Save();
+        }
+
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = tbSearch.Text;
+            ObservableCollection<Predmety> ggez = new ObservableCollection<Predmety>(
+                App.allPredmety.Where(
+                    c => c.NamePredmet.Contains(text) ||
+                    c.FioTeacher.Contains(text) 
+                    ).ToList());
+            dataPredmety.ItemsSource = ggez;
         }
     }
 }

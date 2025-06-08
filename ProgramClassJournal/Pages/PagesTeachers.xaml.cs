@@ -1,6 +1,7 @@
 ﻿using ProgramClassJournal.Classes;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,6 +52,29 @@ namespace ProgramClassJournal.Pages
                 Pages.PageTeachersAddEdit page = new Pages.PageTeachersAddEdit(teacher);
                 NavigationService.Navigate(page);
             }
+        }
+
+        private void btnImport_Click(object sender, RoutedEventArgs e)
+        {
+            Teacher.Load();
+            dataTeachers.ItemsSource = App.allTeachers;
+        }
+
+        private void btnExport_Click(object sender, RoutedEventArgs e)
+        {
+            Teacher.Save();
+
+        }
+
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = tbSearch.Text;
+            ObservableCollection<Teacher> ggez = new ObservableCollection<Teacher>(
+                App.allTeachers.Where(
+                    c => c.FioTeacher.Contains(text) ||
+                    c.NamePredmety.Contains(text)
+                    ).ToList());
+            dataTeachers.ItemsSource = ggez;
         }
     }
 }

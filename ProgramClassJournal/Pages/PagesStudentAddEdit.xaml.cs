@@ -42,9 +42,24 @@ namespace ProgramClassJournal.Pages
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(currentStudent.FioStudent))
+            {
+                MessageBox.Show("Введите ФИО ученика");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(currentStudent.NumberClass) && string.IsNullOrWhiteSpace(currentStudent.Parallell))
+            {
+                MessageBox.Show("Введите класс и параллель");
+                return;
+            }
+            
             if (!editOrAdd)
             {
-
+                if (App.allStudents.Any(p => p.FioStudent == currentStudent.FioStudent) && App.allStudents.Any(p => p.NumberClass == currentStudent.NumberClass) && App.allStudents.Any(p => p.Parallell == currentStudent.Parallell))
+                {
+                    MessageBox.Show("Такой ученик уже существует");
+                    return;
+                }
                 if (App.allStudents.Count == 0)
                     currentStudent.Id = 1;
                 else

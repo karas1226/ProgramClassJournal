@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace ProgramClassJournal.Classes
@@ -29,6 +32,22 @@ namespace ProgramClassJournal.Classes
         public string Parallell { get => parallell; set => parallell = value; }
         public string NumberClass { get => numberClass; set => numberClass = value; }
 
-        
+        public static void Save()
+        {
+            string fileName = "student.json";
+            string json = JsonSerializer.Serialize(App.allStudents, new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+            });
+            File.WriteAllText(fileName, json, Encoding.UTF8);
+        }
+        public static void Load()
+        {
+            string fileName = "student.json";
+            string data = File.ReadAllText(fileName);
+            App.allStudents = JsonSerializer.Deserialize<ObservableCollection<Students>>(data);
+
+        }
     }
 }

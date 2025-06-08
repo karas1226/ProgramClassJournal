@@ -1,6 +1,7 @@
 ﻿using ProgramClassJournal.Classes;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,6 +61,23 @@ namespace ProgramClassJournal.Pages
         private void btnExport_Click(object sender, RoutedEventArgs e)
         {
             Ocenky.Save();
+        }
+
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = tbSearch.Text;
+            ObservableCollection<Ocenky> ggez = new ObservableCollection<Ocenky>(
+                App.allOcenky.Where(
+                    ggwp => ggwp.StudentName.Contains(text) ||
+                    ggwp.PredmetName.Contains(text)
+                    ).ToList());
+            dataGridOcenky.ItemsSource = ggez;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            OcenkyOtchet window = new OcenkyOtchet();
+            window.Show();
         }
     }
 }

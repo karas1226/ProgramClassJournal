@@ -9,20 +9,24 @@
       Title="PagesStudents">
 
     <Grid>
-        <Grid>
-            <DataGrid x:Name="dataStudents" AutoGenerateColumns="False" Margin="0,0,0,55">
+        <Grid Background="LightYellow">
+            <DataGrid x:Name="dataStudents" AutoGenerateColumns="False" Margin="0,0,0,55" Background="White">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="id" Binding="{Binding Id}" />
                     <DataGridTextColumn Header="ФИО ученика" Binding="{Binding FioStudent}" />
                     <DataGridTextColumn Header="Дата рождения" Binding="{Binding DateOfBirth, StringFormat=dd.MM.yyyy HH:mm}" />
                     <DataGridTextColumn Header="Параллель" Binding="{Binding Parallell}" />
                     <DataGridTextColumn Header="Класс" Binding="{Binding NumberClass}" />
-                    
+
                 </DataGrid.Columns>
             </DataGrid>
-            <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top" Click="btnAdd_Click"/>
-            <Button x:Name="btnEdit" Content="Редактировать" HorizontalAlignment="Left" Margin="95,420,0,0" VerticalAlignment="Top" Click="btnEdit_Click"/>
-            <Button x:Name="btnDelete" Content="Удалить" HorizontalAlignment="Left" Margin="217,420,0,0" VerticalAlignment="Top" Click="btnDelete_Click"/>
+            <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="8,420,0,0" VerticalAlignment="Top" Click="btnAdd_Click"/>
+            <Button x:Name="btnEdit" Content="Редактировать" HorizontalAlignment="Left" Margin="79,420,0,0" VerticalAlignment="Top" Click="btnEdit_Click"/>
+            <Button x:Name="btnDelete" Content="Удалить" HorizontalAlignment="Left" Margin="179,420,0,0" VerticalAlignment="Top" Click="btnDelete_Click"/>
+            <Button x:Name="btnImport" Content="Импортировать" HorizontalAlignment="Left" Height="26" Margin="594,412,0,0" VerticalAlignment="Top" Width="96" Click="btnImport_Click"/>
+            <Button x:Name="btnExport" Content="Экспортировать" HorizontalAlignment="Left" Margin="697,412,0,0" VerticalAlignment="Top" Height="26" Width="94" Click="btnExport_Click"/>
+            <TextBox x:Name="tbSearch" HorizontalAlignment="Left" Margin="468,414,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="tbSearch_TextChanged"/>
+            <Label Content="Введите ФИО ученика/Класс/Параллель:" HorizontalAlignment="Left" Margin="234,410,0,0" VerticalAlignment="Top"/>
         </Grid>
     </Grid>
 </Page>

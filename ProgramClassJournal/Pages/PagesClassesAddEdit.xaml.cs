@@ -46,11 +46,31 @@ namespace ProgramClassJournal.Pages
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            
+
+            if (string.IsNullOrWhiteSpace(currentClass.ClassName))
+            {
+                MessageBox.Show("Введите класс");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(currentClass.Parallel))
+            {
+                MessageBox.Show("Введите параллель");
+                return;
+            }
+
             if (!editOrAdd)
             {
-                
-                if (App.allClasses.Count == 0)
+                if (App.allClasses.Any(p => p.ClassName == currentClass.ClassName) && App.allClasses.Any(p => p.Parallel == currentClass.Parallel))
+                {
+                    MessageBox.Show("Предмет с таким названием уже существует");
+                    return;
+                }
+                if (!App.allTeachers.Any(p => p.FioTeacher == currentClass.ClassTeacher))
+                {
+                    MessageBox.Show("Такого учителя не существует");
+                    return;
+                }
+                    if (App.allClasses.Count == 0)
                     currentClass.Id = 1;
                 else
                     currentClass.Id = App.allClasses.OrderByDescending(c => c.Id).First().Id + 1;

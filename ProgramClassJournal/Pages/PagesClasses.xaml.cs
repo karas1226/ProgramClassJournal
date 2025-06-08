@@ -1,6 +1,7 @@
 ﻿using ProgramClassJournal.Classes;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace ProgramClassJournal.Pages
         {
             InitializeComponent();
             dataClasses.ItemsSource = App.allClasses;
-            App.allClasses.Add(new ClassPage(1, "5", "B", "Иванов Иван Иванович"));
+            
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -62,6 +63,18 @@ namespace ProgramClassJournal.Pages
         private void btnExport_Click(object sender, RoutedEventArgs e)
         {
             ClassPage.Save();
+        }
+
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = tbSearch.Text;
+            ObservableCollection<ClassPage> ggez = new ObservableCollection<ClassPage>(
+                App.allClasses.Where(
+                    c => c.ClassName.Contains(text) ||
+                    c.Parallel.Contains(text) ||
+                    (c.ClassName + c.Parallel).Contains(text)
+                    ).ToList());
+            dataClasses.ItemsSource = ggez;
         }
     }
 }

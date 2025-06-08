@@ -5,16 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProgramClassJournal.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="PagesOcenky">
+      d:DesignHeight="450"
+      Title="PagesOcenky" Width="895">
 
     <Grid>
-        <Grid>
+        <Grid Background="LightYellow">
             <Grid.RowDefinitions>
                 <RowDefinition Height="196*"/>
                 <RowDefinition Height="29*"/>
             </Grid.RowDefinitions>
-            <DataGrid x:Name="dataGridOcenky" AutoGenerateColumns="False" Margin="0,0,0,10">
+            <DataGrid x:Name="dataGridOcenky" AutoGenerateColumns="False" Margin="0,0,0,10" Background="White">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="id" Binding="{Binding Id}" />
                     <DataGridTextColumn Header="фио ученика" Binding="{Binding StudentName}" />
@@ -26,10 +26,13 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Height="20" Grid.Row="1" Click="btnAdd_Click"/>
-            <Button x:Name="btnEdit" Content="Редактировать" HorizontalAlignment="Left" Margin="95,0,0,0" VerticalAlignment="Center" Height="21" Grid.Row="1" Click="btnEdit_Click"/>
-            <Button x:Name="btnDelete" Content="Удалить" HorizontalAlignment="Left" Margin="217,0,0,0" VerticalAlignment="Center" Height="21" Grid.Row="1" Click="btnDelete_Click"/>
-            <Button x:Name="btnImport" Content="Импортировать" HorizontalAlignment="Left" Height="26" Margin="598,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="96" Click="btnImport_Click"/>
-            <Button x:Name="btnExport" Content="Экспортировать" HorizontalAlignment="Left" Margin="703,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="26" Width="94" Click="btnExport_Click"/>
+            <Button x:Name="btnEdit" Content="Редактировать" HorizontalAlignment="Left" Margin="82,0,0,0" VerticalAlignment="Center" Height="22" Grid.Row="1" Click="btnEdit_Click"/>
+            <Button x:Name="btnDelete" Content="Удалить" HorizontalAlignment="Left" Margin="183,0,0,0" VerticalAlignment="Center" Height="22" Grid.Row="1" Click="btnDelete_Click"/>
+            <Button x:Name="btnImport" Content="Импортировать" HorizontalAlignment="Left" Height="26" Margin="572,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="96" Click="btnImport_Click"/>
+            <Button x:Name="btnExport" Content="Экспортировать" HorizontalAlignment="Left" Margin="679,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="26" Width="94" Click="btnExport_Click"/>
+            <TextBox x:Name="tbSearch" HorizontalAlignment="Left" Margin="437,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" TextChanged="tbSearch_TextChanged"/>
+            <Label Content="Введите ФИО ученика/предмет:" HorizontalAlignment="Left" Margin="245,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
+            <Button Content="Итоговые оценки" HorizontalAlignment="Left" Margin="782,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="24" Width="103" Click="Button_Click"/>
         </Grid>
     </Grid>
 </Page>

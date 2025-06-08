@@ -24,14 +24,13 @@ namespace ProgramClassJournal.Pages
         public PageTeachersAddEdit()
         {
             InitializeComponent();
-            cmbPredmet.ItemsSource = predmetName;
             
             currentTeacher = new Teacher(0, "", "", "", false);
             DataContext = this;
         }
         bool editOrAdd = false;
         public Classes.Teacher currentTeacher { get; set; }
-        List<string> predmetName = App.allPredmety.Select(p => p.NamePredmet).ToList();
+        
         public PageTeachersAddEdit(Classes.Teacher tc)
         {
             InitializeComponent();
@@ -45,9 +44,29 @@ namespace ProgramClassJournal.Pages
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(currentTeacher.FioTeacher))
+            {
+                MessageBox.Show("Введите ФИО учителя");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(currentTeacher.NamePredmety))
+            {
+                MessageBox.Show("Введите предмет");
+                return;
+            }
+            if ((currentTeacher.ClassTeacher == true) && (currentTeacher.NameClass == null))
+            {
+                MessageBox.Show("Класс у классного руководителя не может отсутствовать");
+                return;
+            }
             if (!editOrAdd)
             {
-
+                if (App.allTeachers.Any(p => p.FioTeacher == currentTeacher.FioTeacher) && App.allTeachers.Any(p => p.NameClass == currentTeacher.NameClass) && App.allTeachers.Any(p => p.NamePredmety == currentTeacher.NamePredmety))
+                {
+                    MessageBox.Show("Такой учитель уже существует");
+                    return;
+                }
                 if (App.allTeachers.Count == 0)
                     currentTeacher.Id = 1;
                 else

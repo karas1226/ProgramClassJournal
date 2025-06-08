@@ -13,7 +13,7 @@
             <RowDefinition Height="450*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical" Background="LightYellow">
             <TextBlock Text="Ученики" FontSize="30" HorizontalAlignment="Center"/>
             <Label Content="ФИО ученика"/>
             <TextBox x:Name="tbStudentFIO" Text="{Binding currentStudent.FioStudent}"/>

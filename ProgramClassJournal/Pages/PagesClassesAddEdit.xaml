@@ -9,14 +9,14 @@
       Title="PagesClassesAddEdit">
 
     <Grid>
-        <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical" Background="LightYellow">
             <TextBlock Text="Классы" FontSize="30" HorizontalAlignment="Center"/>
             <Label Content="Класс"/>
             <TextBox x:Name="tbNumber" Text="{Binding currentClass.ClassName}"/>
             <Label Content="Параллель"/>
             <TextBox x:Name="tbParallel" Text="{Binding currentClass.Parallel}"/>
             <Label Content="Классный руководитель"/>
-            <TextBox x:Name="tbTeacher" Text="{Binding currentClass.ClassName}"/>
+            <TextBox x:Name="tbTeacher" Text="{Binding currentClass.ClassTeacher}"/>
   
             <Button x:Name="btnSave" Content="Сохранить" Click="btnSave_Click"/>
             <Button x:Name="btnBack" Content="Назад" Click="btnBack_Click"/>

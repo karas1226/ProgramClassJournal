@@ -9,8 +9,8 @@
       Title="PagesPredmety">
 
     <Grid>
-        <Grid>
-            <DataGrid x:Name="dataPredmety" AutoGenerateColumns="False" Margin="0,0,0,55">
+        <Grid Background="LightYellow">
+            <DataGrid x:Name="dataPredmety" AutoGenerateColumns="False" Margin="0,0,0,55" Background="White">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="id" Binding="{Binding Id}" />
                     <DataGridTextColumn Header="Название предмета" Binding="{Binding NamePredmet}" />
@@ -20,8 +20,12 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="10,410,0,10" Click="btnAdd_Click"/>
-            <Button x:Name="btnEdit" Content="Редактировать" HorizontalAlignment="Left" Margin="95,410,0,0" VerticalAlignment="Top" Click="btnEdit_Click" Height="30"/>
-            <Button x:Name="btnDelete" Content="Удалить" HorizontalAlignment="Left" Margin="217,410,0,0" VerticalAlignment="Top" Height="30" Click="btnDelete_Click"/>
+            <Button x:Name="btnEdit" Content="Редактировать" HorizontalAlignment="Left" Margin="82,410,0,0" VerticalAlignment="Top" Click="btnEdit_Click" Height="30"/>
+            <Button x:Name="btnDelete" Content="Удалить" HorizontalAlignment="Left" Margin="184,410,0,0" VerticalAlignment="Top" Height="30" Click="btnDelete_Click"/>
+            <Button x:Name="btnImport" Content="Импортировать" HorizontalAlignment="Left" Height="26" Margin="593,407,0,0" VerticalAlignment="Top" Width="96" Click="btnImport_Click"/>
+            <Button x:Name="btnExport" Content="Экспортировать" HorizontalAlignment="Left" Margin="698,407,0,0" VerticalAlignment="Top" Height="26" Width="94" Click="btnExport_Click"/>
+            <TextBox x:Name="tbSearch" HorizontalAlignment="Left" Margin="465,414,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="tbSearch_TextChanged"/>
+            <Label Content="Введите предмет/ФИО преподавателя:" HorizontalAlignment="Left" Margin="243,410,0,0" VerticalAlignment="Top"/>
         </Grid>
     </Grid>
 </Page>

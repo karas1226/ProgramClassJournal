@@ -13,12 +13,12 @@
             <RowDefinition Height="450*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical" Background="LightYellow">
             <TextBlock Text="Учитель" FontSize="30" HorizontalAlignment="Center"/>
             <Label Content="ФИО учителя"/>
             <TextBox x:Name="tbTeacherFIO" Text="{Binding currentTeacher.FioTeacher}"/>
             <Label Content="Предмет учителя"/>
-            <ComboBox x:Name="cmbPredmet" Text="{Binding currentTeacher.NamePredmety}" />
+            <TextBox x:Name="tbTeacherPredmet" Text="{Binding currentTeacher.NamePredmety}"/>
             <Label Content="Класс и параллель"/>
             <TextBox x:Name="tbClassName" Text="{Binding currentTeacher.NameClass}"/>
             <Label Content="Классное руководство"/>

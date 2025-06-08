@@ -1,0 +1,30 @@
+﻿<Window x:Class="ProgramClassJournal.OcenkyOtchet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProgramClassJournal"
+        mc:Ignorable="d"
+        Title="OcenkyOtchet" Height="450" Width="870">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Background="LightGoldenrodYellow" Grid.Row="0">
+            <Button Content="Импорт" Name="btnImport" Click="btnImport_Click"/>
+            <Button Content="Экспорт" Name="btnExport" Click="btnExport_Click"/>
+            <Label Content="Введите наименование предмета"/>
+            <TextBox x:Name="tbSearch"  Width="200" TextChanged="tbSearch_TextChanged" />
+        </StackPanel>
+        <DataGrid Grid.Row="1" Name="dgItog"  IsReadOnly="True" AutoGenerateColumns="False" Background="White" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="Auto"/>
+                <DataGridTextColumn Header="ФИО ученика" Binding="{Binding StudentFIO}" Width="*"/>
+                <DataGridTextColumn Header="Предмет" Binding="{Binding PredmetName}" Width="*"/>
+                <DataGridTextColumn Header="Итоговая оценка" Binding="{Binding Ocenka}" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+    </Grid>
+</Window>

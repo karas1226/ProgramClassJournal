@@ -13,7 +13,7 @@
             <RowDefinition Height="450*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical" Background="LightYellow">
             <TextBlock Text="Предметы" FontSize="30" HorizontalAlignment="Center"/>
             <Label Content="Наименование предмета"/>
             <TextBox x:Name="tbPredmetName" Text="{Binding currentPredmet.NamePredmet}"/>

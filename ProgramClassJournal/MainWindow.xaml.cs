@@ -50,5 +50,10 @@ namespace ProgramClassJournal
             Pages.PagesStudents page = new Pages.PagesStudents();
             mainFrame.Navigate(page);
         }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
