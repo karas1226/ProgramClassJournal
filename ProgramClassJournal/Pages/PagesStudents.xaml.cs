@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,6 +56,11 @@ namespace ProgramClassJournal.Pages
 
         private void btnImport_Click(object sender, RoutedEventArgs e)
         {
+            if (!File.Exists("student.json"))
+            {
+                MessageBox.Show("Отсутствует файл для импорта", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             Students.Load();
             dataStudents.ItemsSource = App.allStudents;
         }

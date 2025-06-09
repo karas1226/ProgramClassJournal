@@ -16,6 +16,7 @@
             <Button Content="Экспорт" Name="btnExport" Click="btnExport_Click"/>
             <Label Content="Введите наименование предмета"/>
             <TextBox x:Name="tbSearch"  Width="200" TextChanged="tbSearch_TextChanged" />
+            <Button Content="Закрыть" x:Name="btnClose" Click="btnClose_Click" />
         </StackPanel>
         <DataGrid Grid.Row="1" Name="dgItog"  IsReadOnly="True" AutoGenerateColumns="False" Background="White" >
             <DataGrid.Columns>
@@ -25,6 +26,6 @@
                 <DataGridTextColumn Header="Итоговая оценка" Binding="{Binding Ocenka}" Width="Auto"/>
             </DataGrid.Columns>
         </DataGrid>
-        
+
     </Grid>
 </Window>

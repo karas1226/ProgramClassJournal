@@ -36,9 +36,7 @@ namespace ProgramClassJournal.Pages
             InitializeComponent();
             DataContext = this;
             editOrAdd = true;
-
-
-            DataContext = this;
+            currentTeacher = tc;
         }
 
 
@@ -57,7 +55,7 @@ namespace ProgramClassJournal.Pages
             }
             if ((currentTeacher.ClassTeacher == true) && (currentTeacher.NameClass == null))
             {
-                MessageBox.Show("Класс у классного руководителя не может отсутствовать");
+                MessageBox.Show("Отсутствие класса у классного руководителя невозможно");
                 return;
             }
             if (!editOrAdd)
@@ -67,6 +65,7 @@ namespace ProgramClassJournal.Pages
                     MessageBox.Show("Такой учитель уже существует");
                     return;
                 }
+                
                 if (App.allTeachers.Count == 0)
                     currentTeacher.Id = 1;
                 else

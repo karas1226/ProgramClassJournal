@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,16 +37,6 @@ namespace ProgramClassJournal.Pages
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            Classes.Teacher classPage = dataTeachers.SelectedItem as Classes.Teacher;
-            if (classPage != null)
-            {
-                Pages.PageTeachersAddEdit page = new Pages.PageTeachersAddEdit(classPage);
-                NavigationService.Navigate(page);
-            }
-        }
-
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
-        {
             Classes.Teacher teacher = dataTeachers.SelectedItem as Classes.Teacher;
             if (teacher != null)
             {
@@ -54,8 +45,22 @@ namespace ProgramClassJournal.Pages
             }
         }
 
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Classes.Teacher teacher = dataTeachers.SelectedItem as Classes.Teacher;
+            if (teacher != null)
+                App.allTeachers.Remove(teacher);
+            dataTeachers.ItemsSource = null;
+            dataTeachers.ItemsSource = App.allTeachers;
+        }
+
         private void btnImport_Click(object sender, RoutedEventArgs e)
         {
+            if (!File.Exists("teachers.json"))
+            {
+                MessageBox.Show("Отсутствует файл для импорта", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             Teacher.Load();
             dataTeachers.ItemsSource = App.allTeachers;
         }

@@ -24,7 +24,7 @@ namespace ProgramClassJournal
     public partial class OcenkyOtchet : Window
     {
         public ObservableCollection<Otchet> Otchety { get; set; } = new ObservableCollection<Otchet>();
-        public ObservableCollection<string> TeacherNames { get; set; } = new ObservableCollection<string>();
+        
         public OcenkyOtchet()
         {
             InitializeComponent();
@@ -33,16 +33,15 @@ namespace ProgramClassJournal
         }
         private void LoadData()
         {
-            
             var groupedOcenky = App.allOcenky
                 .GroupBy(o => new { o.StudentName, o.PredmetName })
                 .Select(g => new
                 {
                     StudentFIO = g.Key.StudentName,
                     PredmetName = g.Key.PredmetName,
-                    Average = g.Average(o => o.Ocenka),
-                    FinalGrade = CalculatingOcenki(g.Average(o => o.Ocenka)),
-                    Grades = string.Join(", ", g.Select(o => o.Ocenka))
+                    AverageOcenka = g.Average(o => o.Ocenka),
+                    ItogovayaOcenka = CalculatingOcenki(g.Average(o => o.Ocenka)),
+                    Ocenochki = string.Join(", ", g.Select(o => o.Ocenka))
                 });
             Otchety.Clear();
             foreach (var item in groupedOcenky)
@@ -51,12 +50,10 @@ namespace ProgramClassJournal
                     id: Otchety.Count + 1,
                     studentFIO: item.StudentFIO,
                     predmetName: item.PredmetName,
-                    ocenka: item.FinalGrade
+                    ocenka: item.ItogovayaOcenka
                 ));
             }
-            
-
-
+            dgItog.ItemsSource = Otchety;
         }
         
        
@@ -88,14 +85,20 @@ namespace ProgramClassJournal
 
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string text = tbSearch.Text;
-            ObservableCollection<Ocenky> ggez = new ObservableCollection<Ocenky>(
-                App.allOcenky.Where(
-                    c => c.StudentName.Contains(text) ||
-                    c.PredmetName.Contains(text) ||
-                    (int.TryParse(text, out int ocenochka) && c.Ocenka == ocenochka)
-                    ).ToList());
-            dgItog.ItemsSource = ggez;
+            string text = tbSearch.Text.ToLower();
+
+            var searching = Otchety.Where(o =>
+                o.StudentFIO.Contains(text) ||
+                o.PredmetName.Contains(text) ||
+                (int.TryParse(text, out int ocenochki) && o.Ocenka == ocenochki)
+            ).ToList();
+
+            dgItog.ItemsSource = new ObservableCollection<Otchet>(searching);
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -62,7 +62,7 @@ namespace ProgramClassJournal.Pages
             {
                 if (App.allClasses.Any(p => p.ClassName == currentClass.ClassName) && App.allClasses.Any(p => p.Parallel == currentClass.Parallel))
                 {
-                    MessageBox.Show("Предмет с таким названием уже существует");
+                    MessageBox.Show("Такой класс уже существует");
                     return;
                 }
                 if (!App.allTeachers.Any(p => p.FioTeacher == currentClass.ClassTeacher))
@@ -70,7 +70,12 @@ namespace ProgramClassJournal.Pages
                     MessageBox.Show("Такого учителя не существует");
                     return;
                 }
-                    if (App.allClasses.Count == 0)
+                if (App.allTeachers.Any(p => p.ClassTeacher == false))
+                {
+                    MessageBox.Show("Учитель не является классным руководителем");
+                    return;
+                }
+                if (App.allClasses.Count == 0)
                     currentClass.Id = 1;
                 else
                     currentClass.Id = App.allClasses.OrderByDescending(c => c.Id).First().Id + 1;

@@ -40,6 +40,7 @@ namespace ProgramClassJournal.Pages
             DataContext = this;
             editOrAdd = true;
             currentPredmet = pt;
+            cmbTeacherName.ItemsSource = teacherName;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -68,11 +69,9 @@ namespace ProgramClassJournal.Pages
                 else
                     currentPredmet.Id = App.allPredmety.OrderByDescending(c => c.Id).First().Id + 1;
                 App.allPredmety.Add(currentPredmet);
-                NavigationService.Navigate(new PagesPredmety());
-             
                 
             }
-           
+            NavigationService.Navigate(new PagesPredmety());
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
