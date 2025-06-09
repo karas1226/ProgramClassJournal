@@ -1,0 +1,38 @@
+﻿[
+  {
+    "Id": 1,
+    "ClassName": "1",
+    "Parallel": "А",
+    "ClassTeacher": "Смирнова Ольга Васильевна"
+  },
+  {
+    "Id": 2,
+    "ClassName": "2",
+    "Parallel": "В",
+    "ClassTeacher": "Медведева Татьяна Викторовна"
+  },
+  {
+    "Id": 3,
+    "ClassName": "2",
+    "Parallel": "Б",
+    "ClassTeacher": "Григорьева Елена Игоревна"
+  },
+  {
+    "Id": 4,
+    "ClassName": "3",
+    "Parallel": "А",
+    "ClassTeacher": "Фролова Надежда Михайловна"
+  },
+  {
+    "Id": 5,
+    "ClassName": "4",
+    "Parallel": "А",
+    "ClassTeacher": "Соколова Марина Александровна"
+  },
+  {
+    "Id": 6,
+    "ClassName": "5",
+    "Parallel": "В",
+    "ClassTeacher": "Гусев Артём Константинович"
+  }
+]

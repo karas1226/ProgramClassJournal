@@ -1,0 +1,86 @@
+﻿[
+  {
+    "Id": 1,
+    "FioTeacher": "Смирнова Ольга Васильевна",
+    "NamePredmety": "Русский язык",
+    "NameClass": "1 А",
+    "ClassTeacher": true
+  },
+  {
+    "Id": 2,
+    "FioTeacher": "Ковалёв Андрей Петрович",
+    "NamePredmety": " Математика",
+    "NameClass": "",
+    "ClassTeacher": false
+  },
+  {
+    "Id": 3,
+    "FioTeacher": "Григорьева Елена Игоревна",
+    "NamePredmety": "Литература",
+    "NameClass": "2 Б",
+    "ClassTeacher": true
+  },
+  {
+    "Id": 4,
+    "FioTeacher": "Захаров Дмитрий Сергеевич",
+    "NamePredmety": "Физкультура",
+    "NameClass": "",
+    "ClassTeacher": false
+  },
+  {
+    "Id": 5,
+    "FioTeacher": "Медведева Татьяна Викторовна",
+    "NamePredmety": "Окружающий мир",
+    "NameClass": "2 В",
+    "ClassTeacher": true
+  },
+  {
+    "Id": 6,
+    "FioTeacher": "Борисов Алексей Николаевич",
+    "NamePredmety": "Технология",
+    "NameClass": "",
+    "ClassTeacher": false
+  },
+  {
+    "Id": 7,
+    "FioTeacher": "Фролова Надежда Михайловна",
+    "NamePredmety": "ИЗО",
+    "NameClass": "3 А",
+    "ClassTeacher": true
+  },
+  {
+    "Id": 8,
+    "FioTeacher": "Тимофеев Игорь Владимирович",
+    "NamePredmety": " Музыка",
+    "NameClass": "",
+    "ClassTeacher": false
+  },
+  {
+    "Id": 9,
+    "FioTeacher": "Соколова Марина Александровна",
+    "NamePredmety": "Английский язык",
+    "NameClass": "4 А",
+    "ClassTeacher": true
+  },
+  {
+    "Id": 10,
+    "FioTeacher": "Власов Павел Олегович",
+    "NamePredmety": "Информатика",
+    "NameClass": "",
+    "ClassTeacher": true
+  },
+  {
+    "Id": 11,
+    "FioTeacher": "Зуева Анна Денисовна",
+    "NamePredmety": "История",
+    "NameClass": "",
+    "ClassTeacher": false
+  },
+  {
+    "Id": 12,
+    "FioTeacher": "Гусев Артём Константинович",
+    "NamePredmety": "География",
+    "NameClass": "5 В",
+    "ClassTeacher": true
+  }
+]

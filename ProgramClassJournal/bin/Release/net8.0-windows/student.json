@@ -1,0 +1,86 @@
+﻿[
+  {
+    "Id": 1,
+    "FioStudent": "Иванов Артём Сергеевич",
+    "DateOfBirth": "2025-06-09T10:43:42.2773522+05:00",
+    "Parallell": "1",
+    "NumberClass": "А"
+  },
+  {
+    "Id": 2,
+    "FioStudent": "Петрова София Дмитриевна",
+    "DateOfBirth": "2025-06-09T10:46:54.6019166+05:00",
+    "Parallell": "1",
+    "NumberClass": "А"
+  },
+  {
+    "Id": 3,
+    "FioStudent": "Сидоров Максим Игоревич",
+    "DateOfBirth": "2025-06-09T10:47:15.0812868+05:00",
+    "Parallell": "2",
+    "NumberClass": "Б"
+  },
+  {
+    "Id": 4,
+    "FioStudent": "Кузнецова Анна Павловна",
+    "DateOfBirth": "2025-06-09T10:47:42.2900806+05:00",
+    "Parallell": "2",
+    "NumberClass": "Б"
+  },
+  {
+    "Id": 5,
+    "FioStudent": "Васильев Егор Владимирович",
+    "DateOfBirth": "2025-06-09T10:47:59.2892265+05:00",
+    "Parallell": "2",
+    "NumberClass": "В"
+  },
+  {
+    "Id": 6,
+    "FioStudent": "Морозова Виктория Александровна",
+    "DateOfBirth": "2025-06-09T10:48:19.9694764+05:00",
+    "Parallell": "3",
+    "NumberClass": "А"
+  },
+  {
+    "Id": 7,
+    "FioStudent": "Николаев Даниил Олегович",
+    "DateOfBirth": "2025-06-09T10:48:34.6820646+05:00",
+    "Parallell": "3",
+    "NumberClass": "А"
+  },
+  {
+    "Id": 8,
+    "FioStudent": "Козлова Елизавета Артёмовна",
+    "DateOfBirth": "2025-06-09T10:48:50.0478326+05:00",
+    "Parallell": "3",
+    "NumberClass": "Б"
+  },
+  {
+    "Id": 9,
+    "FioStudent": "Павлов Иван Алексеевич",
+    "DateOfBirth": "2025-06-09T10:49:02.0244532+05:00",
+    "Parallell": "4",
+    "NumberClass": "А"
+  },
+  {
+    "Id": 10,
+    "FioStudent": "Семёнова Алёна Игоревна",
+    "DateOfBirth": "2025-06-09T10:49:12.3052117+05:00",
+    "Parallell": "4",
+    "NumberClass": "А"
+  },
+  {
+    "Id": 11,
+    "FioStudent": " Фёдоров Кирилл Денисович",
+    "DateOfBirth": "2025-06-09T10:49:30.2877351+05:00",
+    "Parallell": "4",
+    "NumberClass": "Б"
+  },
+  {
+    "Id": 12,
+    "FioStudent": "Лебедева Мария Сергеевна",
+    "DateOfBirth": "2025-06-09T10:49:47.5758262+05:00",
+    "Parallell": "5",
+    "NumberClass": "В"
+  }
+]
