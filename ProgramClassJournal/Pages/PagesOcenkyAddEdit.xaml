@@ -20,7 +20,7 @@
             <Label Content="Наименование предмета"/>
             <ComboBox x:Name="cmbPredmetName" Text="{Binding currentOcenky.PredmetName}" SelectionChanged="cmbPredmetName_SelectionChanged"/>
             <Label Content="Дата оценки"/>
-            <DatePicker x:Name="dpDateOcenka" Text="{Binding currentOcenky.DateOcenk}"/>
+            <DatePicker x:Name="dpDateOcenka" SelectedDate="{Binding currentOcenky.DateOcenk}"/>
             <Label Content="Оценка"/>
             <TextBox x:Name="tbOcenka" Text="{Binding currentOcenky.Ocenka}"/>
             <Label Content="Преподаватель"/>

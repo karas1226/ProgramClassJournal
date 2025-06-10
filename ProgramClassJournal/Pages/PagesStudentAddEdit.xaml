@@ -18,7 +18,7 @@
             <Label Content="ФИО ученика"/>
             <TextBox x:Name="tbStudentFIO" Text="{Binding currentStudent.FioStudent}"/>
             <Label Content="Дата рождения"/>
-            <DatePicker x:Name="dpDateOfBirthday" Text="{Binding currentStudent.DateOfBirth}"/>
+            <DatePicker x:Name="dpDateOfBirthday" SelectedDate="{Binding currentStudent.DateOfBirth}"/>
             <Label Content="Класс"/>
             <TextBox x:Name="tbClassNumber" Text="{Binding currentStudent.Parallell}"/>
             <Label Content="Параллель"/>

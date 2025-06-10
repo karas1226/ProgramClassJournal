@@ -20,7 +20,7 @@
             <Label Content="Преподаватель"/>
             <ComboBox x:Name="cmbTeacherName" Text="{Binding currentPredmet.FioTeacher}"/>
             <Label Content="Дата предмета"/>
-            <DatePicker x:Name="dpDatePredmeta" Text="{Binding currentPredmet.DatePredmet}"/>
+            <DatePicker x:Name="dpDatePredmeta" SelectedDate="{Binding currentPredmet.DatePredmet}"/>
             
             
 
